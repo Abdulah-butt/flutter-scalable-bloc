@@ -15,6 +15,8 @@ Use this architecture when the app has multiple features, remote/local data, dev
 
 ## Core boundaries
 
+- Use this request path for feature behavior: `UI -> Cubit/BLoC -> Use case -> Repository contract -> Repository implementation -> data source/service`.
+- Results return through the same boundaries in reverse. The UI observes Cubit state only; it never receives DTOs, database rows, HTTP responses, or plugin types.
 - Presentation renders and wires interactions. Feature Cubits own page state and orchestration; widgets do not call HTTP clients, databases, or platform plugins directly.
 - Domain contains business entities, repository contracts, cross-feature stores, and reusable use cases. It does not depend on Flutter persistence or transport implementations.
 - Data implements repository contracts and maps DTOs to domain entities. Keep API/JSON and database representations out of presentation and domain entities.
