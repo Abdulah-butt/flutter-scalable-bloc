@@ -29,7 +29,13 @@ lib/
 │   ├── sheets/
 │   ├── widgets/
 │   └── view_data/
-└── service_locator/               # dependency registrations by concern and feature
+└── service_locator/
+    ├── service_locator.dart        # small ordered bootstrap coordinator
+    ├── app_services.dart           # device/platform service registrations
+    ├── app_repositories.dart       # database, cache, network, repository registrations
+    ├── app_stores.dart             # cross-feature store registrations
+    ├── app_usecases.dart           # domain use-case registrations
+    └── app_cubits.dart             # feature navigator and Cubit registrations
 ```
 
 ## Required request path
@@ -62,3 +68,4 @@ Return data in reverse. `TrainingRepositoryImp` maps JSON through a data model (
 - Register contracts to implementations in `service_locator/`; inject the contract everywhere else.
 
 Read [presentation-structure.md](presentation-structure.md) for the mandatory nested page and widget placement rules.
+Read [bootstrap-and-di.md](bootstrap-and-di.md) for registration order and singleton-versus-factory decisions.

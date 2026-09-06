@@ -14,6 +14,7 @@ Before adding files or dependencies, inspect the existing app's `pubspec.yaml`, 
 Use this architecture when the app has multiple features, remote/local data, device capabilities, or a long maintenance horizon. A simple static screen does not need every layer or a Cubit.
 
 For every network-backed feature or change to the app structure, read [project-structure.md](references/project-structure.md) first. Its folder layout and request flow are the required convention unless the host project has already established a deliberate compatible variation.
+Read [bootstrap-and-di.md](references/bootstrap-and-di.md) before changing `main.dart`, startup initialization, dependency registration, service lifetime, navigators, or Cubit registration.
 
 ## Core boundaries
 
