@@ -26,6 +26,7 @@ For every network-backed feature or change to the app structure, read [project-s
 - Services wrap device and platform integrations behind small contracts. Register implementations through dependency injection.
 
 Read [layering.md](references/layering.md) before introducing a repository, use case, service, or cross-feature state.
+Read [network-and-session.md](references/network-and-session.md) before adding an endpoint, authentication/context behavior, a retryable mutation, or offline network handling.
 
 ## Feature work
 
@@ -37,6 +38,7 @@ For a navigable feature, first follow the closest existing feature. The normal m
 - Promote state to a domain store only when independent features must observe or mutate it.
 
 Read [feature-modules.md](references/feature-modules.md) for a new screen or feature.
+Read [cubit-lifecycle.md](references/cubit-lifecycle.md) when a Cubit owns controllers, streams, timers, debounced work, search, refresh, or pagination.
 
 ## UI and platform behavior
 

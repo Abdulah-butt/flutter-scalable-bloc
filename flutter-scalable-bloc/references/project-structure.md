@@ -56,6 +56,7 @@ Return data in reverse. `TrainingRepositoryImp` maps JSON through a data model (
 - Domain repository contracts return entities and accept typed request models; never return raw maps or data models.
 - Each domain use case is a named class with `execute(...)`, taking the repository contract through its constructor.
 - Concrete repositories live in `data/repositories/<concern>/` and use the `_imp.dart` suffix. They depend on `NetworkRepository`, not directly on `Dio`.
+- Name the implementation class with the matching `Imp` suffix, for example `TrainingRepositoryImp`.
 - Data models belong in `data/models/`; each has parsing and a `toDomain()` conversion when it represents a domain entity.
 - Cubits live beside the page they power and receive use cases, services, stores, navigator, and UI helpers through constructors. Do not use a service locator inside a Cubit.
 - Register contracts to implementations in `service_locator/`; inject the contract everywhere else.

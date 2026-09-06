@@ -32,7 +32,7 @@ The result comes back in reverse, as domain entities or typed failures. The Cubi
 | Repository implementation | Choose source, map DTOs/rows to entities, apply cache strategy | Expose transport/persistence types upward |
 | Data source/service | Execute HTTP, database, or device operation | Contain feature UI state or product orchestration |
 
-Name the concrete class after the contract, such as `TrainingRepository` and `TrainingRepositoryImpl`; inject the contract into use cases and Cubits, never the implementation.
+Name the concrete class after the contract with the `Imp` suffix, such as `TrainingRepository` and `TrainingRepositoryImp`; inject the contract into use cases and Cubits, never the implementation.
 
 Every Cubit-facing repository operation has a use case, including a simple one-to-one call. Keep that use case compact, but retain it as the stable domain boundary between presentation and repository access.
 
@@ -52,7 +52,6 @@ Every Cubit-facing repository operation has a use case, including a simple one-t
 
 ## Rules that prevent architectural bloat
 
-- Do not make a use case that only forwards one repository method with no reusable policy.
 - Do not create a global store for one page's state.
 - Do not expose a DTO, Drift row, Dio response, plugin type, or `BuildContext` from a domain contract.
 - Do not make a generic repository with untyped `Map` payloads when a feature-specific contract is clearer.
