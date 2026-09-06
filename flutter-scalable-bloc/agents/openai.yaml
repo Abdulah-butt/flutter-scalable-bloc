@@ -1,0 +1,3 @@
+interface:
+  display_name: "Flutter Scalable Bloc"
+  short_description: "Build scalable Flutter features with layered Cubit/BLoC architecture"
