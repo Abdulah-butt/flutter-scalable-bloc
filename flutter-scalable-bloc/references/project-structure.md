@@ -25,7 +25,7 @@ lib/
 ├── services/
 │   └── <capability>/              # contract plus platform/plugin implementation
 ├── presentation/
-│   ├── pages/<area>/<feature>/    # page, cubit, state, navigator, initial params, local widgets
+│   ├── pages/<area>/<feature>/    # nested areas/features; each route owns its screen unit and local widgets
 │   ├── sheets/
 │   ├── widgets/
 │   └── view_data/
@@ -60,3 +60,5 @@ Return data in reverse. `TrainingRepositoryImp` maps JSON through a data model (
 - Data models belong in `data/models/`; each has parsing and a `toDomain()` conversion when it represents a domain entity.
 - Cubits live beside the page they power and receive use cases, services, stores, navigator, and UI helpers through constructors. Do not use a service locator inside a Cubit.
 - Register contracts to implementations in `service_locator/`; inject the contract everywhere else.
+
+Read [presentation-structure.md](presentation-structure.md) for the mandatory nested page and widget placement rules.

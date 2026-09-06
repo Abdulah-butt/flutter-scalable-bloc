@@ -38,6 +38,7 @@ For a navigable feature, first follow the closest existing feature. The normal m
 - Promote state to a domain store only when independent features must observe or mutate it.
 
 Read [feature-modules.md](references/feature-modules.md) for a new screen or feature.
+Read [presentation-structure.md](references/presentation-structure.md) before creating or moving a page, subfeature, widget, sheet, view-data type, or navigation code.
 Read [cubit-lifecycle.md](references/cubit-lifecycle.md) when a Cubit owns controllers, streams, timers, debounced work, search, refresh, or pagination.
 
 ## UI and platform behavior
