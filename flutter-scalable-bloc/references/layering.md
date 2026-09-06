@@ -13,7 +13,7 @@ For a non-trivial user action, keep the call path explicit:
 ```text
 Page / Widget
   -> Feature Cubit or BLoC
-  -> Use case (when it owns reusable business policy)
+  -> Use case
   -> Repository contract (domain)
   -> Repository implementation (data)
   -> Remote/local data source, network client, or platform service
@@ -34,7 +34,7 @@ The result comes back in reverse, as domain entities or typed failures. The Cubi
 
 Name the concrete class after the contract, such as `TrainingRepository` and `TrainingRepositoryImpl`; inject the contract into use cases and Cubits, never the implementation.
 
-Do not force a use case for a simple one-to-one repository call. When one is not justified, use `Cubit -> Repository contract -> Repository implementation`; retain the same dependency rules.
+Every Cubit-facing repository operation has a use case, including a simple one-to-one call. Keep that use case compact, but retain it as the stable domain boundary between presentation and repository access.
 
 ## Put work in the narrowest correct layer
 

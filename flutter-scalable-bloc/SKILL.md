@@ -13,9 +13,11 @@ Before adding files or dependencies, inspect the existing app's `pubspec.yaml`, 
 
 Use this architecture when the app has multiple features, remote/local data, device capabilities, or a long maintenance horizon. A simple static screen does not need every layer or a Cubit.
 
+For every network-backed feature or change to the app structure, read [project-structure.md](references/project-structure.md) first. Its folder layout and request flow are the required convention unless the host project has already established a deliberate compatible variation.
+
 ## Core boundaries
 
-- Use this request path for feature behavior: `UI -> Cubit/BLoC -> Use case -> Repository contract -> Repository implementation -> data source/service`.
+- Use this request path for feature behavior: `UI -> Cubit/BLoC -> Use case -> Repository contract -> Repository implementation -> network/service`.
 - Results return through the same boundaries in reverse. The UI observes Cubit state only; it never receives DTOs, database rows, HTTP responses, or plugin types.
 - Presentation renders and wires interactions. Feature Cubits own page state and orchestration; widgets do not call HTTP clients, databases, or platform plugins directly.
 - Domain contains business entities, repository contracts, cross-feature stores, and reusable use cases. It does not depend on Flutter persistence or transport implementations.
@@ -31,7 +33,7 @@ For a navigable feature, first follow the closest existing feature. The normal m
 
 - Keep route paths and argument serialization centralized.
 - Keep Cubit state explicit, immutable, and specific to visible UI needs.
-- Create a use case only for a reusable business action or policy; do not introduce one merely to add another layer.
+- Give every repository operation a dedicated domain use case. Cubits depend on use cases, not repositories.
 - Promote state to a domain store only when independent features must observe or mutate it.
 
 Read [feature-modules.md](references/feature-modules.md) for a new screen or feature.
