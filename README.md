@@ -18,7 +18,7 @@ It is derived from production patterns, but contains no application-specific bus
 ### Codex
 
 ```bash
-npx skills add <YOUR_GITHUB_ORG>/flutter-scalable-bloc-skill --skill flutter-scalable-bloc
+npx skills add https://github.com/Abdulah-butt/flutter-scalable-bloc --skill flutter-scalable-bloc
 ```
 
 Or clone the repository and place/symlink `flutter-scalable-bloc/` in `~/.codex/skills/`.
@@ -59,7 +59,6 @@ Use cursor pagination, keep old results visible during pull-to-refresh, and do n
 
 ## Before publishing
 
-1. Replace `<YOUR_GITHUB_ORG>` in this README.
-2. Test the skill on a small app, a new feature, and a refactor.
-3. Keep examples generic; never commit client code, tokens, URLs, or private documents.
-4. Add a license—MIT is a practical default if you want broad reuse.
+1. Test the skill on a small app, a new feature, and a refactor.
+2. Keep examples generic; never commit client code, tokens, URLs, or private documents.
+3. Add a license—MIT is a practical default if you want broad reuse.
